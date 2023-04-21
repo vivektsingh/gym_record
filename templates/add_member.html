@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Member</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        form {
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+          }
+          
+          input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+          }
+          
+          input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          input[type="submit"]:hover {
+            background-color: #45a049;
+          }
+          
+    </style>
+
+</head>
+<body>
+    <h1>Add Member</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br><br>
+        <label for="mobile_number">Mobile Number:</label>
+        <input type="text" name="mobile_number" required><br><br>
+        <label for="date_of_joining">Date of Joining:</label>
+        <input type="date" name="date_of_joining" required><br><br>
+        <label for="date_of_fee_submission">Date of Fee Submission:</label>
+        <input type="date" name="date_of_fee_submission" required><br><br>
+        <input type="submit" value="Add Member">
+    </form>
+</body>
+</html>

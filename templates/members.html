@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+          }
+          
+          th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+          }
+          
+          th {
+            background-color: #4CAF50;
+            color: white;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+          
+          tr:hover {
+            background-color: #ddd;
+          }
+          
+    </style>
+</head>
+<body>
+       
+    <h1>Members</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile Number</th>
+                <th>Date of Joining</th>
+                <th>Date of Fee Submission</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.name }}</td>
+                <td>{{ member.mobile_number }}</td>
+                <td>{{ member.date_of_joining }}</td>
+                <td>{{ member.date_of_fee_submission }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No members found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+<!-- 
+    <h1>Members</h1>
+    <form method="GET" action="{% url 'members' %}">
+        <input type="text" name="q" placeholder="Search by name or mobile number" value="{{ request.GET.q }}">
+        <button type="submit">Search</button>
+    </form>
+    <table>
+    <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile Number</th>
+                <th>Date of Joining</th>
+                <th>Date of Fee Submission</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.name }}</td>
+                <td>{{ member.mobile_number }}</td>
+                <td>{{ member.date_of_joining }}</td>
+                <td>{{ member.date_of_fee_submission }}</td>
+                <td>
+                    
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No members found.</td>
+            </tr>
+            {% endfor %}-->
